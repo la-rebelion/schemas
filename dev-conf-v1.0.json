@@ -1,0 +1,616 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/DevConfEvent",
+  "definitions": {
+    "DevConfEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "shortname": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "end-date": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "location": {
+          "type": "string"
+        },
+        "heading": {
+          "type": "string"
+        },
+        "cta": {
+          "$ref": "#/definitions/AboutCta"
+        },
+        "about": {
+          "$ref": "#/definitions/About"
+        },
+        "stats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Stat"
+          }
+        },
+        "speakers": {
+          "$ref": "#/definitions/Speakers"
+        },
+        "schedule": {
+          "$ref": "#/definitions/Schedule"
+        },
+        "tickets": {
+          "$ref": "#/definitions/Tickets"
+        },
+        "offers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Offer"
+          }
+        },
+        "venue": {
+          "$ref": "#/definitions/Venue"
+        },
+        "sponsors": {
+          "$ref": "#/definitions/Sponsors"
+        }
+      },
+      "required": [
+        "about",
+        "cta",
+        "date",
+        "end-date",
+        "featured",
+        "heading",
+        "location",
+        "name",
+        "offers",
+        "picture",
+        "schedule",
+        "shortname",
+        "slug",
+        "speakers",
+        "sponsors",
+        "stats",
+        "tickets",
+        "venue"
+      ],
+      "title": "DevConfEvent"
+    },
+    "About": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cta": {
+          "$ref": "#/definitions/AboutCta"
+        },
+        "description": {
+          "type": "string"
+        },
+        "highlights": {
+          "$ref": "#/definitions/Highlights"
+        }
+      },
+      "required": [
+        "cta",
+        "description",
+        "highlights"
+      ],
+      "title": "About"
+    },
+    "AboutCta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "link": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "link",
+        "text"
+      ],
+      "title": "AboutCta"
+    },
+    "Highlights": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "highlights-list": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "highlights-list"
+      ],
+      "title": "Highlights"
+    },
+    "Offer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "icon"
+      ],
+      "title": "Offer"
+    },
+    "Schedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduleDate"
+          }
+        },
+        "cta-group": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CtaGroup"
+          }
+        }
+      },
+      "required": [
+        "cta-group",
+        "dates"
+      ],
+      "title": "Schedule"
+    },
+    "CtaGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "button-class": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "button-class",
+        "link",
+        "text"
+      ],
+      "title": "Call To Action Group"
+    },
+    "ScheduleDate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "heading": {
+          "type": "string"
+        },
+        "plan": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Plan"
+          }
+        }
+      },
+      "required": [
+        "date",
+        "heading"
+      ],
+      "title": "Schedule Date"
+    },
+    "Plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start-time": {
+          "type": "string"
+        },
+        "end-time": {
+          "type": "string"
+        },
+        "conference": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "speaker": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "conference",
+        "end-time",
+        "location",
+        "start-time",
+        "summary"
+      ],
+      "title": "Plan"
+    },
+    "Speakers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "intro": {
+          "type": "string"
+        },
+        "cta": {
+          "$ref": "#/definitions/AboutCta"
+        },
+        "speaker": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Speaker"
+          }
+        }
+      },
+      "required": [
+        "cta",
+        "intro",
+        "speaker"
+      ],
+      "title": "Speakers"
+    },
+    "Speaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "github": {
+          "type": "string"
+        },
+        "linkedin": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "github",
+        "linkedin",
+        "name",
+        "organization",
+        "picture",
+        "role",
+        "slug",
+        "summary",
+        "twitter"
+      ],
+      "title": "Speaker"
+    },
+    "Sponsors": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "sponsor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sponsor"
+          }
+        },
+        "cta": {
+          "$ref": "#/definitions/AboutCta"
+        }
+      },
+      "required": [
+        "cta",
+        "description",
+        "sponsor"
+      ],
+      "title": "Sponsors"
+    },
+    "Sponsor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/Link"
+        }
+      },
+      "required": [
+        "icon",
+        "link",
+        "name"
+      ],
+      "title": "Sponsor"
+    },
+    "Stat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "group": {
+          "type": "string"
+        },
+        "stats-details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StatsDetail"
+          }
+        }
+      },
+      "required": [
+        "group",
+        "stats-details"
+      ],
+      "title": "Stat"
+    },
+    "StatsDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "number": {
+          "$ref": "#/definitions/Number"
+        }
+      },
+      "required": [
+        "number",
+        "unit"
+      ],
+      "title": "StatsDetail"
+    },
+    "Tickets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "intro": {
+          "type": "string"
+        },
+        "pricing": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pricing"
+          }
+        }
+      },
+      "required": [
+        "intro",
+        "pricing"
+      ],
+      "title": "Tickets"
+    },
+    "Pricing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "cta": {
+          "$ref": "#/definitions/PricingCta"
+        }
+      },
+      "required": [
+        "cta",
+        "description",
+        "name",
+        "price"
+      ],
+      "title": "Pricing"
+    },
+    "PricingCta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "link": {
+          "$ref": "#/definitions/Link"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "link",
+        "text"
+      ],
+      "title": "PricingCta"
+    },
+    "Venue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "how-to-get-there": {
+          "$ref": "#/definitions/HowToGetThere"
+        },
+        "facilities": {
+          "$ref": "#/definitions/Facilities"
+        },
+        "pictures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Picture"
+          }
+        }
+      },
+      "required": [
+        "facilities",
+        "how-to-get-there",
+        "pictures"
+      ],
+      "title": "Venue"
+    },
+    "Facilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "cta": {
+          "$ref": "#/definitions/AboutCta"
+        }
+      },
+      "required": [
+        "cta",
+        "description"
+      ],
+      "title": "Facilities"
+    },
+    "HowToGetThere": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "how-to-by": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HowToBy"
+          }
+        }
+      },
+      "required": [
+        "description",
+        "how-to-by"
+      ],
+      "title": "HowToGetThere"
+    },
+    "HowToBy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "cta": {
+          "$ref": "#/definitions/AboutCta"
+        }
+      },
+      "required": [
+        "cta",
+        "description",
+        "icon",
+        "title"
+      ],
+      "title": "HowToBy"
+    },
+    "Picture": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "picture",
+        "text"
+      ],
+      "title": "Picture"
+    },
+    "Number": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Number"
+    },
+    "Link": {
+      "type": "string",
+      "enum": [
+        "#"
+      ],
+      "title": "Link"
+    }
+  }
+}
