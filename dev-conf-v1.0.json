@@ -76,20 +76,13 @@
         "cta",
         "date",
         "end-date",
-        "featured",
         "heading",
         "location",
         "name",
         "offers",
         "picture",
-        "schedule",
         "shortname",
-        "slug",
-        "speakers",
-        "sponsors",
-        "stats",
-        "tickets",
-        "venue"
+        "slug"
       ],
       "title": "DevConfEvent"
     },
