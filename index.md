@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+# JSON Schema Store for "La Rebelion" projects
 
-You can use the [editor on GitHub](https://github.com/la-rebelion/schemas/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+JSON schema store for "La Rebelion" JSON documents.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+JSON Schemas allows you to annotate and validate JSON documents, YAML file type is also possible; this last relies on the JSON Schema specifications.
 
-### Markdown
+## YAML
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+If you ned an automatic binding of "La Rebelion" YAML files with corresponding schema you can use [in-file declaration](https://developers.redhat.com/blog/2020/11/25/how-to-configure-yaml-schema-to-make-editing-files-easier#schema_association_without_a_file_name_pattern), as an example:
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```yaml
+# yaml-language-server: $schema=https://schemas.rebelion.la/dev-conf-v1.0.json
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Sponsor Us
 
-### Jekyll Themes
+Do wou like what "La Rebelion" is doing?  Then, please [sponsor us](https://www.paypal.com/donate?hosted_button_id=7CV28AHGL9ZZY) to keep going.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/la-rebelion/schemas/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Support
 
-### Support or Contact
+Having trouble? Check out our [discussions space](https://github.com/la-rebelion/schemas/discussions).
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**References:**
+
+* [How to configure YAML schema to make editing files easier](https://developers.redhat.com/blog/2020/11/25/how-to-configure-yaml-schema-to-make-editing-files-easier)
+* [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/)
